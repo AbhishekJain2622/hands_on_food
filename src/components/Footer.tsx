@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { ChefHat, MapPin, Mail, Phone, Facebook, Twitter } from 'lucide-react';
+import { ChefHat, MapPin, Mail, Phone, Facebook, Twitter,Instagram } from 'lucide-react';
 
 const Footer = () => {
   const menuItems = [
@@ -27,6 +27,9 @@ const Footer = () => {
             <div className="flex gap-4">
               <a href="#" className="hover:text-orange-500 transition-colors">
                 <Facebook size={24} />
+              </a>
+              <a href="handsonfoodbymansi" className="hover:text-orange-500 transition-colors">
+                <Instagram size={24} />
               </a>
               <a href="#" className="hover:text-orange-500 transition-colors">
                 <Twitter size={24} />
@@ -63,14 +66,14 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-orange-500" />
-                <a href="mailto:hello@handsonfood.com" className="text-gray-400 hover:text-orange-500 transition-colors">
-                  hello@handsonfood.com
+                <a href="mailto:handsonfood3@gmail.com" className="text-gray-400 hover:text-orange-500 transition-colors">
+                handsonfood3@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-orange-500" />
-                <a href="tel:+12345678900" className="text-gray-400 hover:text-orange-500 transition-colors">
-                  +1 (234) 567-8900
+                <a href="tel:+91 9920018777" className="text-gray-400 hover:text-orange-500 transition-colors">
+                +91 9920018777
                 </a>
               </div>
             </div>
