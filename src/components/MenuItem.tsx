@@ -100,11 +100,11 @@ const ProductSection = () => {
       {/* Call-to-Action */}
       <div className="max-w-3xl mx-auto mt-12 text-center">
         <motion.a
-          href="/menu"
+          href="/Contact"
           className="inline-block px-8 py-3 bg-orange-500 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300"
           whileHover={{ scale: 1.1 }}
         >
-          View Full Menu 🍽️
+          Order Now 🍽️
         </motion.a>
       </div>
     </section>

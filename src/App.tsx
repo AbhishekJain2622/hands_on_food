@@ -81,7 +81,7 @@ function App() {
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
-      <div className="relative h-full flex items-center justify-center text-center px-4">
+      <div id="menu" className="relative h-full flex items-center justify-center text-center px-4">
         <div>
           <motion.h1
             className="text-4xl md:text-7xl font-bold text-white mb-6"
@@ -99,7 +99,7 @@ function App() {
           >
             Premium Cloud Kitchen & Gourmet Premixes
           </motion.p>
-          <motion.button
+          <motion.button 
             className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-transform transform hover:scale-105"
             whileHover={{ scale: 1.1 }}
           >
@@ -174,7 +174,7 @@ function App() {
       </div>
 
       {/* Final Call-to-Action */}
-      <div className="max-w-3xl mx-auto mt-12 text-center">
+      <div id="menu" className="max-w-3xl mx-auto mt-12 text-center">
         <p className="text-lg text-gray-700 leading-relaxed">
           At <span className="font-semibold text-orange-600">Handsonfood</span>, we promise **fresh flavors, quality ingredients, and great service.**
         </p>
@@ -192,6 +192,9 @@ function App() {
 
 
 <ProductSection/>
+<br />
+<br />
+<br />
 
 <TestimonialCarousel/>
 
@@ -246,8 +249,9 @@ function App() {
             <motion.div className="space-y-8" whileHover={{ scale: 1.05 }}>
               <h3 className="text-2xl font-semibold">Get in Touch</h3>
               <p>123 Foodie Street, Culinary District, 12345</p>
-              <p>hello@handsonfood.com</p>
-              <p>+1 (234) 567-8900</p>
+              <p> handsonfood3@gmail.com</p>
+              <p>+91 9920018777</p>
+              
             </motion.div>
             <ContactForm />
           </div>
