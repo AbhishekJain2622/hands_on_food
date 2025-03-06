@@ -1,14 +1,15 @@
-import React from 'react';
-import { Link } from 'react-scroll';
-import { ChefHat, MapPin, Mail, Phone, Facebook, Twitter,Instagram } from 'lucide-react';
+import React from "react";
+import { Link } from "react-scroll";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { HiLocationMarker, HiMail, HiPhone } from "react-icons/hi";
 
 const Footer = () => {
   const menuItems = [
-    { name: 'About Us', to: 'about' },
-    { name: 'Our Process', to: 'process' },
-    { name: 'Menu', to: 'menu' },
-    { name: 'Testimonials', to: 'testimonials' },
-    { name: 'Contact Us', to: 'contact' },
+    { name: "About Us", to: "about" },
+    { name: "Our Process", to: "process" },
+    { name: "Menu", to: "menu" },
+    { name: "Testimonials", to: "testimonials" },
+    { name: "Contact Us", to: "contact" },
   ];
 
   return (
@@ -18,7 +19,7 @@ const Footer = () => {
           {/* Logo Column */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <ChefHat size={32} className="text-orange-500" />
+              <img src="/logo1.png" alt="Hands on Food Logo" className="w-10 h-10" />
               <span className="font-bold text-xl">Hands on Food</span>
             </div>
             <p className="text-gray-400">
@@ -26,13 +27,13 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-orange-500 transition-colors">
-                <Facebook size={24} />
+                <FaFacebookF size={24} />
               </a>
               <a href="handsonfoodbymansi" className="hover:text-orange-500 transition-colors">
-                <Instagram size={24} />
+                <FaInstagram size={24} />
               </a>
               <a href="#" className="hover:text-orange-500 transition-colors">
-                <Twitter size={24} />
+                <FaTwitter size={24} />
               </a>
             </div>
           </div>
@@ -61,19 +62,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Connect with Us</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <MapPin className="text-orange-500" />
+                <HiLocationMarker className="text-orange-500" size={24} />
                 <p className="text-gray-400">123 Foodie Street, Culinary District, 12345</p>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="text-orange-500" />
+                <HiMail className="text-orange-500" size={24} />
                 <a href="mailto:handsonfood3@gmail.com" className="text-gray-400 hover:text-orange-500 transition-colors">
-                handsonfood3@gmail.com
+                  handsonfood3@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="text-orange-500" />
+                <HiPhone className="text-orange-500" size={24} />
                 <a href="tel:+91 9920018777" className="text-gray-400 hover:text-orange-500 transition-colors">
-                +91 9920018777
+                  +91 9920018777
                 </a>
               </div>
             </div>
