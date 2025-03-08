@@ -1,333 +1,140 @@
-import React from "react";
-import { motion } from "framer-motion";
-import {
-  ChefHat,
-  Clock,
-  Package,
-  Truck,
-  MapPin,
-  Mail,
-  Phone,
-} from "lucide-react";
-import ProcessCard from "./components/ProcessCard";
-import ProductSection from "./components/MenuItem";
-import TestimonialCarousel from "./components/TestimonialCarousel";
-import ContactForm from "./components/ContactForm";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import React from 'react';
+import { ChefHat, Clock, Package, Truck, MapPin, Mail, Phone } from 'lucide-react';
+import ProcessCard from './components/ProcessCard';
+import TestimonialCarousel from './components/TestimonialCarousel';
+import ContactForm from './components/ContactForm';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+
 
 function App() {
-  const features = [
-    {
-      title: "Preservative-Free",
-      description:
-        "We take pride in offering products that are completely free from preservatives. No chemicals, just real, authentic flavors.",
-    },
-    {
-      title: "Freshly Cut",
-      description:
-        "Our ingredients are freshly cut to ensure the highest level of flavor and nutrition, delivering a burst of freshness in every bite.",
-    },
-    {
-      title: "Raw Materials Freshness",
-      description:
-        "We source only the freshest raw materials from local farms and trusted suppliers, ensuring every meal is packed with vitality and flavor.",
-    },
-    {
-      title: "Made with Pure Love",
-      description:
-        "At HandsOnFood, we don’t just cook; we create food with care and passion, ensuring every bite is filled with love.",
-    },
-    {
-      title: "No Chemicals",
-      description:
-        "We focus on natural ingredients with no artificial chemicals, ensuring pure and wholesome food.",
-    },
-    {
-      title: "Authentic Flavors",
-      description:
-        "Using traditional cooking techniques, we bring out the best in every ingredient for a true taste experience.",
-    },
-    {
-      title: "Handpicked Ingredients",
-      description:
-        "Each ingredient is handpicked to ensure premium quality and maximum freshness for a nutritious and delicious meal.",
-    },
-    {
-      title: "Sustainable Sourcing",
-      description:
-        "We believe in sustainability and ethically source our ingredients to support farmers and protect the environment.",
-    },
-    {
-      title: "Pure & Wholesome",
-      description:
-        "We stand by our commitment to purity, delivering food that nourishes your body and soul with every bite.",
-    },
-  ];
-
   const processes = [
-    {
-      icon: <ChefHat size={32} />,
-      title: "Fresh Ingredients",
-      description: "We source the finest ingredients daily",
-    },
-    {
-      icon: <Package size={32} />,
-      title: "Quality Packaging",
-      description: "Sealed for freshness and safety",
-    },
-    {
-      icon: <Clock size={32} />,
-      title: "Quick Preparation",
-      description: "Ready in minutes, perfect every time",
-    },
-    {
-      icon: <Truck size={32} />,
-      title: "Fast Delivery",
-      description: "Right to your doorstep",
-    },
+    { icon: <ChefHat size={32} />, title: "Fresh Ingredients", description: "We source the finest ingredients daily" },
+    { icon: <Package size={32} />, title: "Quality Packaging", description: "Sealed for freshness and safety" },
+    { icon: <Clock size={32} />, title: "Quick Preparation", description: "Ready in minutes, perfect every time" },
+    { icon: <Truck size={32} />, title: "Fast Delivery", description: "Right to your doorstep" }
   ];
 
+
+  
+  
   return (
-    <>
-      <div className="w-full min-h-[100vh] bg-white flex flex-col overflow-x-hidden">
-        <Navbar />
-
-        {/* Hero Section */}
-        <section id="hero" className="relative h-screen">
-          <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=1800"
-              alt="Kitchen"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section id="hero" className="relative h-screen">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=1800" 
+            alt="Kitchen"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        <div className="relative h-full flex items-center justify-center text-center px-4">
+          <div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              Hands on Food
+            </h1>
+            <p className="text-xl md:text-2xl text-white mb-8">
+              Premium Cloud Kitchen & Gourmet Premixes
+            </p>
+            <button   className="bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors">
+              Explore Our Menu
+            </button>
           </div>
-          <div
-            id="menu"
-            className="relative h-full flex items-center justify-center text-center px-4"
-          >
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8">About Us</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <motion.h1
-                className="text-4xl md:text-7xl font-bold text-white mb-6"
-                initial={{ y: -50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                Hands on Food
-              </motion.h1>
-              <motion.p
-                className="text-lg md:text-2xl text-white mb-8"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                Premium Cloud Kitchen & Gourmet Premixes
-              </motion.p>
-              <motion.button
-                className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-transform transform hover:scale-105"
-                whileHover={{ scale: 1.1 }}
-              >
-                Explore Our Menu
-              </motion.button>
-            </div>
-          </div>
-        </section>
-
-        {/* About Section */}
-        <motion.section
-          id="about"
-          className="relative bg-white py-16 px-6 md:px-12 lg:px-24 text-gray-900"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Background Image */}
-          <div className="absolute inset-0 -z-10">
-            <img
-              src="/background.jpg"
-              alt="Background"
-              className="w-full h-full object-cover opacity-10"
-            />
-          </div>
-
-          {/* Section Header */}
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-orange-600">
-              About Us
-            </h2>
-            <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-              Welcome to{" "}
-              <span className="font-semibold text-orange-500">
-                Handsonfood Cloud Kitchen
-              </span>
-              , your go-to for <b>delicious dips</b>,{" "}
-              <b>easy premix solutions</b>, and <b>party catering</b>. We make
-              your food experience effortless yet amazing!
-            </p>
-          </div>
-
-          {/* Specialties Section */}
-          <div className="mt-12 grid gap-10 md:grid-cols-3 text-center">
-            {/* Feature 1 - Dips */}
-            <motion.div
-              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img src="/1.png" alt="Dips" className="w-20 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-orange-500">
-                Delicious Dips
-              </h3>
-              <p className="text-gray-600 mt-2">
-                Freshly made dips with premium ingredients. Try our **guacamole,
-                hummus, and more!**
-              </p>
-            </motion.div>
-
-            {/* Feature 2 - Premix */}
-            <motion.div
-              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img src="/2.png" alt="Premix" className="w-20 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-orange-500">
-                Quick Premix Solutions
-              </h3>
-              <p className="text-gray-600 mt-2">
-                No more measuring! Our premixes guarantee a **perfect dish every
-                time.**
-              </p>
-            </motion.div>
-
-            {/* Feature 3 - Party Orders */}
-            <motion.div
-              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img
-                src="/3.png"
-                alt="Party Orders"
-                className="w-20 mx-auto mb-4"
+              <img 
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" 
+                alt="Kitchen"
+                className="rounded-lg shadow-xl"
               />
-              <h3 className="text-xl font-semibold text-orange-500">
-                Party Orders
-              </h3>
-              <p className="text-gray-600 mt-2">
-                Hosting a party? Let us handle the **food, dips, and desserts!**
+            </div>
+            <div>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At Hands on Food, we believe in making gourmet cooking accessible to everyone. 
+                Our cloud kitchen delivers restaurant-quality meals, while our premium premixes 
+                bring professional flavors to your home kitchen. With years of culinary expertise 
+                and a passion for quality, we're revolutionizing how people experience food.
               </p>
-            </motion.div>
-          </div>
-
-          {/* Final Call-to-Action */}
-          <div id="menu" className="max-w-3xl mx-auto mt-12 text-center">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              At{" "}
-              <span className="font-semibold text-orange-600">Handsonfood</span>
-              , we promise **fresh flavors, quality ingredients, and great
-              service.**
-            </p>
-            <motion.a
-              href="/menu"
-              className="inline-block mt-6 px-8 py-3 bg-orange-500 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-            >
-              Explore Our Menu 🍽️
-            </motion.a>
-          </div>
-        </motion.section>
-
-        {/* Product Section */}
-        <ProductSection />
-        <br />
-        <br />
-        <br />
-
-        {/* Testimonial Section */}
-        <TestimonialCarousel />
-
-        {/* Process Section */}
-        <motion.section
-          id="process"
-          className="py-20 px-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16">
-              Our Process
-            </h2>
-            <div className="grid md:grid-cols-4 gap-8">
-              {processes.map((process, index) => (
-                <motion.div key={index} whileHover={{ scale: 1.1 }}>
-                  <ProcessCard {...process} />
-                </motion.div>
-              ))}
             </div>
           </div>
-        </motion.section>
+        </div>
+      </section>
 
-        {/* Features Section */}
-        <section className="w-full py-12 bg-gray-100 overflow-hidden">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-6">
-              Why Choose HandsOnFood?
-            </h2>
-            <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-              At HandsOnFood, we believe in serving food that’s as pure and
-              wholesome as the love we put into every dish.
-            </p>
-
-            <div className="relative w-full overflow-hidden">
-              <motion.div
-                className="flex space-x-6"
-                animate={{ x: ["0%", "-100%"] }}
-                transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-              >
-                {[...features, ...features].map((feature, index) => (
-                  <div
-                    key={index}
-                    className="w-64 bg-white p-6 shadow-md rounded-xl flex-shrink-0"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-800">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 mt-2 text-sm">
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
+      {/* Process Section */}
+      <section id="process" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">Our Process</h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            {processes.map((process, index) => (
+              <ProcessCard key={index} {...process} />
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact Section */}
-        <motion.section
-          id="contact"
-          className="py-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <div className="max-w-6xl mx-auto px-4 mb-16">
-            <h2 className="text-4xl font-bold text-center mb-16">Contact Us</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <motion.div className="space-y-8" whileHover={{ scale: 1.05 }}>
-                <h3 className="text-2xl font-semibold">Get in Touch</h3>
-                <p>123 Foodie Street, Culinary District, 12345</p>
-                <p> handsonfood3@gmail.com</p>
-                <p>+91 9920018777</p>
-              </motion.div>
-              <ContactForm />
+
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">What Our Customers Say</h2>
+          <TestimonialCarousel />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20">
+        <div className="max-w-6xl mx-auto px-4 mb-16">
+          <h2 className="text-4xl font-bold text-center mb-16">Contact Us</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <h3 className="text-2xl font-semibold">Get in Touch</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <MapPin className="text-orange-500" />
+                  <p>123 Foodie Street, Culinary District, 12345</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Mail className="text-orange-500" />
+                  <p>hello@handsonfood.com</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Phone className="text-orange-500" />
+                  <p>+1 (234) 567-8900</p>
+                </div>
+              </div>
             </div>
+            <ContactForm />
           </div>
-        </motion.section>
+        </div>
+        
+        {/* Full-width Map */}
+        <div className="h-[500px] w-full">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596834!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645868744240!5m2!1sen!2s" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
 
-        {/* Footer */}
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 }
 
