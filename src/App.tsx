@@ -241,7 +241,7 @@ function App() {
 
 
         {/* Product Section */}
-      
+        <MenuItem />
         <br />
         <br />
         <br />
