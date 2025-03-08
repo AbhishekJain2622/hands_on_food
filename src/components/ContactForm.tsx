@@ -7,6 +7,7 @@ const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,6 +23,7 @@ const ContactForm: React.FC = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
+          phone: formData.phone,
           message: formData.message,
           to_email: 'hello@handsonfood.com', // Replace with your email
         },
@@ -29,7 +31,7 @@ const ContactForm: React.FC = () => {
       );
 
       toast.success('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       toast.error('Failed to send message. Please try again.');
       console.error('SMTP Error:', error);
@@ -47,7 +49,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-xl shadow-lg">
       <Toaster position="top-right" />
       
       <input
@@ -57,7 +59,7 @@ const ContactForm: React.FC = () => {
         value={formData.name}
         onChange={handleChange}
         placeholder="Your Name"
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder-gray-400"
+        className="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-[#EAAA00] focus:border-transparent placeholder-gray-500"
         required
       />
 
@@ -68,7 +70,18 @@ const ContactForm: React.FC = () => {
         value={formData.email}
         onChange={handleChange}
         placeholder="Your Email"
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder-gray-400"
+        className="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-[#EAAA00] focus:border-transparent placeholder-gray-500"
+        required
+      />
+
+      <input
+        type="phone"
+        id="phone"
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        placeholder="Your Phone"
+        className="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-[#EAAA00] focus:border-transparent placeholder-gray-500"
         required
       />
 
@@ -79,14 +92,14 @@ const ContactForm: React.FC = () => {
         onChange={handleChange}
         placeholder="Your Message"
         rows={4}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder-gray-400 resize-none"
+        className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EAAA00] focus:border-transparent placeholder-gray-500 resize-none"
         required
       ></textarea>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-orange-600 transition-colors ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+        className={`w-full bg-[#EAAA00] text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-yellow-600 transition-all shadow-md ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
         <Send size={20} />
